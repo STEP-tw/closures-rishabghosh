@@ -26,34 +26,29 @@ const makeCounterFromZero = function(){
 
 //--------------
 
-const makeDeltaTracker = undefined;
-/*
-function(currOld){ 
-
-    const updateOld = function(){
-    return obj.new;
-  }
+const makeDeltaTracker = function(currOld){ 
+let newVal;
 
   const trackDel = function(currDelta){
-
-    let obj = {old: 0, delta: 0, new: 0};
-    obj.old = currOld ;
-
-    if(currDelta != undefined){
-      obj.delta = currDelta;
+    let object = {old: 0, delta: 0, new: 0};
+    object.old = currOld ;
+    
+    if(newVal != undefined){
+      object.old = newVal;
     }
 
-    let valueOfNew = obj.delta + obj.old;
-    obj.new = valueOfNew;
-    obj.old = obj.new;
+    if(currDelta != undefined){
+      object.delta = currDelta;
+    }
 
-    return obj; 
+    object.new = object.delta + object.old;
+    newVal = object.new;
+
+    return object; 
   }
 
   return trackDel;
 }
-
-*/
 
 //----------------------
 //currently its full with ugly code, and stupid logics. plz take precaution.
@@ -119,7 +114,6 @@ const curry = function(callback, initValue){
 //---------------------
 
 
-//const compose = undefined;
 
 const compose = function(callback1, callback2){
 
