@@ -88,6 +88,23 @@ const makeFiboGenerator = function(num1,num2){
   return getNextFibo;
 }
 
+/*------------------------*/
+
+//const makeCycler = undefined;
+let result; 
+const makeCycler = function(list){
+
+  for(let count = 0; count < list.length -1; count ++){
+    list.push( list.shift() );
+  }
+
+  const cycleOne = function(){
+    list.push( list.shift() );
+    return list[0];
+  }
+
+  return cycleOne;
+}
 
 
 
@@ -106,7 +123,6 @@ const makeFiboGenerator = function(num1,num2){
 
 
 
-const makeCycler = undefined;
 const curry = undefined;
 const compose = undefined;
 
