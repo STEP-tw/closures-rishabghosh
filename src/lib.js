@@ -42,8 +42,6 @@ let newVal;
     }
 
     object.new = object.delta + object.old;
-    newVal = object.new;
-
     return object; 
   }
 
@@ -86,7 +84,8 @@ const makeFiboGenerator = function(num1,num2){
 /*------------------------*/
 
 //const makeCycler = undefined;
-const makeCycler = function(list){
+const makeCycler = function(group){
+let list = group.slice();
 
   for(let count = 0; count < list.length -1; count ++){
     list.push( list.shift() );
