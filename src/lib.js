@@ -42,6 +42,8 @@ let newVal;
     }
 
     object.new = object.delta + object.old;
+    newVal = object.new;
+
     return object; 
   }
 
