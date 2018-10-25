@@ -61,11 +61,11 @@ function(currOld){
 const makeFiboGenerator = function(num1,num2){
   let firstFibo = -1;
   let secondFibo = 1;
-  let count = 0;
 
   if(num1 != undefined){
     firstFibo = -num1; 
-    secondFibo = num1;  }
+    secondFibo = num1;  
+  }
 
   if(num2 != undefined){
     secondFibo = num2 - num1;
@@ -73,13 +73,13 @@ const makeFiboGenerator = function(num1,num2){
   }
 
   const getNextFibo = function(){
-   let result = firstFibo + secondFibo;
+    let result = firstFibo + secondFibo;
 
-   const updateFibo = function(){
-     firstFibo = secondFibo;
-     secondFibo = result;
-   }
-        
+    const updateFibo = function(){
+      firstFibo = secondFibo;
+      secondFibo = result;
+    }
+
     updateFibo();
 
     return result;
