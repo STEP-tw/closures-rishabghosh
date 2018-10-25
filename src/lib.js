@@ -5,6 +5,14 @@ const makeConstant = function(element){
   return returnFunc;
 }
 
+//--------------------
+
+const makeCounterFromN = function(elem){
+  const incriment = function(){
+    return elem++;
+  }
+  return incriment;
+}
 
 
 
@@ -15,17 +23,6 @@ const makeConstant = function(element){
 
 
 
-
-
-
-
-
-
-
-
-
-
-const makeCounterFromN = undefined;
 const makeCounterFromZero = undefined;
 const makeDeltaTracker = undefined;
 const makeFiboGenerator = undefined;
