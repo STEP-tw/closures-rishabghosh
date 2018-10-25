@@ -104,25 +104,19 @@ const makeCycler = function(list){
 
   return cycleOne;
 }
+//---------------------------
+
+//const curry = undefined;
+
+const curry = function(callback, initValue){
+
+  const executeCallback = function(value, value2){
+  return callback(initValue, value, value2);
+  }
+  return executeCallback;
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const curry = undefined;
 const compose = undefined;
 
 
