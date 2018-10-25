@@ -116,9 +116,19 @@ const curry = function(callback, initValue){
   return executeCallback;
 }
 
+//---------------------
 
-const compose = undefined;
 
+//const compose = undefined;
+
+const compose = function(callback1, callback2){
+
+  const executeCallbacks = function(value1, value2){
+    return callback1( callback2(value1, value2));
+  }
+
+  return executeCallbacks; 
+}
 
 exports.makeConstant=makeConstant;
 exports.makeCounterFromZero=makeCounterFromZero;
