@@ -1,4 +1,30 @@
-const makeConstant = undefined;
+const makeConstant = function(element){
+  const returnFunc =  function(){
+    return element;
+  }
+  return returnFunc;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const makeCounterFromN = undefined;
 const makeCounterFromZero = undefined;
 const makeDeltaTracker = undefined;
@@ -6,6 +32,7 @@ const makeFiboGenerator = undefined;
 const makeCycler = undefined;
 const curry = undefined;
 const compose = undefined;
+
 
 exports.makeConstant=makeConstant;
 exports.makeCounterFromZero=makeCounterFromZero;
