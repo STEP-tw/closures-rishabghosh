@@ -91,7 +91,6 @@ const makeFiboGenerator = function(num1,num2){
 /*------------------------*/
 
 //const makeCycler = undefined;
-let result; 
 const makeCycler = function(list){
 
   for(let count = 0; count < list.length -1; count ++){
