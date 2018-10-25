@@ -14,6 +14,15 @@ const makeCounterFromN = function(elem){
   return incriment;
 }
 
+//----------------------
+
+const makeCounterFromZero = function(){
+  let count = 0;
+  const counterFromZero = function(){
+    return count ++;
+  }
+  return counterFromZero;
+}
 
 
 
@@ -23,7 +32,17 @@ const makeCounterFromN = function(elem){
 
 
 
-const makeCounterFromZero = undefined;
+
+
+
+
+
+
+
+
+
+
+
 const makeDeltaTracker = undefined;
 const makeFiboGenerator = undefined;
 const makeCycler = undefined;
