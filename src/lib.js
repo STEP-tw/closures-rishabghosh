@@ -1,21 +1,21 @@
 const makeConstant = function(element){
 
-  const returnFunc =  function(){
+  const returnGivenElement =  function(){
     return element;
   }
 
-  return returnFunc;
+  return returnGivenElement;
 }
 
 /* ---------------------------------- */
 
-const makeCounterFromN = function(elem){
+const makeCounterFromN = function(number){
 
-  const incriment = function(){
-    return elem++;
+  const incrimentNumber = function(){
+    return number++;
   }
 
-  return incriment;
+  return incrimentNumber;
 }
 
 /* ---------------------------------- */
@@ -23,22 +23,22 @@ const makeCounterFromN = function(elem){
 const makeCounterFromZero = function(){
   let counter = 0;
 
-  const countererFromZero = function(){
+  const incrimentCounter = function(){
     return counter ++;
   }
 
-  return countererFromZero;
+  return incrimentCounter;
 }
 
 /* ---------------------------------- */
 
 const makeDeltaTracker = function(currOld){ 
-let newVal;
+  let newVal;
 
   const trackDel = function(currDelta){
     let object = {old: 0, delta: 0, new: 0};
     object.old = currOld ;
-    
+
     if(newVal !== undefined){
       object.old = newVal;
     }
@@ -58,19 +58,19 @@ let newVal;
 
 /* ---------------------------------- */
 
-const makeFiboGenerator = function(firstNumber,secondNumber){
+const makeFiboGenerator = function(firstResult,secondResult){
   let firstSeed = -1;
   let secondSeed = 1;
   let result;
 
-  if(firstNumber !== undefined){
-    firstSeed = - firstNumber; 
-    secondSeed = firstNumber;  
+  if(firstResult !== undefined){
+    firstSeed = - firstResult; 
+    secondSeed = firstResult;  
   }
 
-  if(firstNumber !== undefined && secondNumber !== undefined){
-    secondSeed = secondNumber - firstNumber;
-    firstSeed = firstNumber - secondSeed;
+  if(firstResult !== undefined && secondResult !== undefined){
+    secondSeed = secondResult - firstResult;
+    firstSeed = firstResult - secondSeed;
   }
 
   const generateResult = function(){
@@ -102,24 +102,24 @@ const makeCycler = function(list){
 
 /* ---------------------------------- */
 
-const curry = function(callback, initValue){
+const curry = function(givenFunc, initValue){
 
-  const executeCallback = function(value, value2){
-    return callback(initValue, value, value2);
+  const partialFunc = function(value1, value2){
+    return givenFunc(initValue, value1, value2);
   }
 
-  return executeCallback;
+  return partialFunc;
 }
 
 /* ---------------------------------- */
 
-const compose = function(callback1, callback2){
+const compose = function(firstFunc, secondFunc){
 
-  const executeCallbacks = function(value1, value2){
-    return callback1( callback2(value1, value2));
+  const generateComposedResult = function(value1, value2){
+    return firstFunc( secondFunc(value1, value2) );
   }
 
-  return executeCallbacks; 
+  return generateComposedResult; 
 }
 
 /* ---------------------------------- */
