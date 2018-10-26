@@ -2,10 +2,12 @@ const assert=require("assert");
 const makeConstant = require('../src/lib.js').makeConstant;
 
 const testMakeConstantWithNoArgs = function() {
+
   let constantlyReturnTwo = makeConstant(2);
   let constantlyReturnString = makeConstant('hello');
   let constantlyReturnArray = makeConstant([1, 2, 3]);
   let constantlyReturnObject = makeConstant({a: 1, b: 2});
+
   assert.equal(2, constantlyReturnTwo());
   assert.equal('hello', constantlyReturnString());
   assert.deepEqual([1, 2, 3], constantlyReturnArray());

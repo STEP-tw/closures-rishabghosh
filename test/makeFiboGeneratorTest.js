@@ -3,6 +3,7 @@ const makeFiboGenerator = require('../src/lib.js').makeFiboGenerator;
 
 const testFiboGeneratorWithDefaultArgs = function() {
   let getNextFiboNumber = makeFiboGenerator();
+
   assert.equal(0,getNextFiboNumber());
   assert.equal(1,getNextFiboNumber());
   assert.equal(1,getNextFiboNumber());
@@ -13,6 +14,7 @@ const testFiboGeneratorWithDefaultArgs = function() {
 
 const testFiboGeneratorWithASingleArg = function() {
   let getNextFiboNumber = makeFiboGenerator(2);
+
   assert.equal(0,getNextFiboNumber());
   assert.equal(2,getNextFiboNumber());
   assert.equal(2,getNextFiboNumber());

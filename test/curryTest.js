@@ -30,10 +30,12 @@ const testCreatingPartialFunctionWithArrayAsAnArgument = function() {
 
 const testCreatingPartialFunctionThatWillLaterBeSuppliedWithTwoArgs = function() {
   let isTenBetween=curry(isBetween,10);
+
   assert.equal(true,isTenBetween(5,15));
   assert.equal(false,isTenBetween(12,15));
 
   let paintYellow=curry(paintCar,"yellow");
+
   assert.deepEqual({color:"yellow", make:"maruti", model:"swift" },paintYellow("maruti","swift"));
   assert.deepEqual({color:"yellow", make:"ferrari", model:"GTC4" },paintYellow("ferrari","GTC4"));
 };

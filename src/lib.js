@@ -1,30 +1,36 @@
 const makeConstant = function(element){
+
   const returnFunc =  function(){
     return element;
   }
+
   return returnFunc;
 }
 
-//--------------------
+/* ---------------------------------- */
 
 const makeCounterFromN = function(elem){
+
   const incriment = function(){
     return elem++;
   }
+
   return incriment;
 }
 
-//----------------------
+/* ---------------------------------- */
 
 const makeCounterFromZero = function(){
-  let count = 0;
-  const counterFromZero = function(){
-    return count ++;
+  let counter = 0;
+
+  const countererFromZero = function(){
+    return counter ++;
   }
-  return counterFromZero;
+
+  return countererFromZero;
 }
 
-//--------------
+/* ---------------------------------- */
 
 const makeDeltaTracker = function(currOld){ 
 let newVal;
@@ -50,8 +56,7 @@ let newVal;
   return trackDel;
 }
 
-//----------------------
-//currently its full with ugly code, and stupid logics. plz take precaution.
+/* ---------------------------------- */
 
 const makeFiboGenerator = function(num1,num2){
   let firstFibo = -1;
@@ -83,38 +88,35 @@ const makeFiboGenerator = function(num1,num2){
   return getNextFibo;
 }
 
-/*------------------------*/
+/* ---------------------------------- */
 
-//const makeCycler = undefined;
-const makeCycler = function(group){
-let list = group.slice();
-
-  for(let count = 0; count < list.length -1; count ++){
-    list.push( list.shift() );
-  }
+const makeCycler = function(list){
+  let cloneOfList = list.slice();
+  let count = -1; 
 
   const cycleOne = function(){
-    list.push( list.shift() );
-    return list[0];
+    count ++;
+    if(count === cloneOfList.length){
+      count = 0;
+    }
+    return cloneOfList[count];
   }
 
   return cycleOne;
 }
-//---------------------------
 
-//const curry = undefined;
+/* ---------------------------------- */
 
 const curry = function(callback, initValue){
 
   const executeCallback = function(value, value2){
-  return callback(initValue, value, value2);
+    return callback(initValue, value, value2);
   }
+
   return executeCallback;
 }
 
-//---------------------
-
-
+/* ---------------------------------- */
 
 const compose = function(callback1, callback2){
 
@@ -124,6 +126,8 @@ const compose = function(callback1, callback2){
 
   return executeCallbacks; 
 }
+
+/* ---------------------------------- */
 
 exports.makeConstant=makeConstant;
 exports.makeCounterFromZero=makeCounterFromZero;

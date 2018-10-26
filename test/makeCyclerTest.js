@@ -3,6 +3,7 @@ const makeCycler = require('../src/lib.js').makeCycler;
 
 const testCyclerThatCanCycleOneElement = function() {
   let cycleOne = makeCycler([1]);
+
   assert.equal(1,cycleOne());
   assert.equal(1,cycleOne());
   assert.equal(1,cycleOne());
