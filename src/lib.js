@@ -39,11 +39,11 @@ let newVal;
     let object = {old: 0, delta: 0, new: 0};
     object.old = currOld ;
     
-    if(newVal != undefined){
+    if(newVal !== undefined){
       object.old = newVal;
     }
 
-    if(currDelta != undefined){
+    if(currDelta !== undefined){
       object.delta = currDelta;
     }
 
@@ -58,34 +58,29 @@ let newVal;
 
 /* ---------------------------------- */
 
-const makeFiboGenerator = function(num1,num2){
-  let firstFibo = -1;
-  let secondFibo = 1;
+const makeFiboGenerator = function(firstNumber,secondNumber){
+  let firstSeed = -1;
+  let secondSeed = 1;
+  let result;
 
-  if(num1 != undefined){
-    firstFibo = -num1; 
-    secondFibo = num1;  
+  if(firstNumber !== undefined){
+    firstSeed = - firstNumber; 
+    secondSeed = firstNumber;  
   }
 
-  if(num2 != undefined){
-    secondFibo = num2 - num1;
-    firstFibo = num1 - secondFibo;
+  if(firstNumber !== undefined && secondNumber !== undefined){
+    secondSeed = secondNumber - firstNumber;
+    firstSeed = firstNumber - secondSeed;
   }
 
-  const getNextFibo = function(){
-    let result = firstFibo + secondFibo;
-
-    const updateFibo = function(){
-      firstFibo = secondFibo;
-      secondFibo = result;
-    }
-
-    updateFibo();
-
+  const generateResult = function(){
+    result = firstSeed + secondSeed;
+    firstSeed = secondSeed;
+    secondSeed = result;
     return result;
   }
 
-  return getNextFibo;
+  return generateResult;
 }
 
 /* ---------------------------------- */
