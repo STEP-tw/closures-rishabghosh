@@ -33,28 +33,31 @@ const makeCounterFromZero = function(){
 /* ---------------------------------- */
 
 const makeDeltaTracker = function(currOld){ 
-  let newVal;
+  let updateOld;
+  let container = {old: 0, delta: 0, new: 0};
 
   const trackDel = function(currDelta){
-    let object = {old: 0, delta: 0, new: 0};
-    object.old = currOld ;
+        container.old = currOld ;
 
-    if(newVal !== undefined){
-      object.old = newVal;
+    if(updateOld !== undefined){
+      container.old = updateOld;
     }
 
     if(currDelta !== undefined){
-      object.delta = currDelta;
+      container.delta = currDelta;
     }
 
-    object.new = object.delta + object.old;
-    newVal = object.new;
+    container.new = container.delta + container.old;
+    updateOld = container.new;
 
-    return object; 
+    return container; 
   }
 
   return trackDel;
 }
+
+
+
 
 /* ---------------------------------- */
 
