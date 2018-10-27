@@ -37,7 +37,7 @@ const makeDeltaTracker = function(currOld){
   let container = {old: 0, delta: 0, new: 0};
 
   const trackDel = function(currDelta){
-        container.old = currOld ;
+    container.old = currOld ;
 
     if(updateOld !== undefined){
       container.old = updateOld;
